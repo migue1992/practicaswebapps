@@ -2,39 +2,185 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Practica 02- Front End</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 02 - Front End</title>
+    
+    <!-- Bootstrap CSS (PRIMERO) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS Personalizado (DESPUÉS, para sobrescribir) -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
-    <h1>Mi sitio web</h1>
-    </header>
-
-    <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi sitio web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link" href="#">Servicios</a>
+                    <a class="nav-link" href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <main>
-    <section>
-    <h2>Bienvenido</h2>
-    <p>Esta es mi primera interfaz web desarrollada con HTML y CSS.</p>
-    <img src="img/imagen1.jpg" alt="Imagen principal">
-    </section>
+    <!-- Header -->
+    <header class="header-section">
+        <div class="container">
+            <h1 class="display-4">Mi sitio web</h1>
+            <p class="lead">Desarrollo web profesional con las mejores tecnologías</p>
+        </div>
+    </header>
 
-    <aside>
-    <h3>Información secundaria</h3>
-    <img src="img/imagen2.jpg" alt="Imagen secundaria">
-    </aside>
-
+    <!-- Contenido Principal -->
+    <main class="container main-content">
+        <div class="row">
+            <!-- Sección Principal -->
+            <section class="col-lg-8 col-md-12 mb-4">
+                <div class="card main-card">
+                    <div class="card-body">
+                        <h2 class="card-title">Bienvenido</h2>
+                        <p class="card-text">
+                            Esta es mi primera interfaz web mejorada con Bootstrap. Este diseño incorpora componentes modernos y responsivos para una mejor experiencia de usuario.
+                        </p>
+                        
+                        <!-- Imagen con placeholder si no existe -->
+                        <div class="image-container">
+                            <img src="img/imagen1.jpg" 
+                                 class="img-fluid main-image"
+                                 alt="Imagen principal"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/007bff/ffffff?text=Imagen+Principal'">
+                        </div>
+                        
+                        <h3 class="features-title">Características principales:</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Diseño completamente responsivo</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Componentes Bootstrap optimizados</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Navegación intuitiva</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Performance mejorado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="#" class="btn btn-primary btn-lg">Leer más información</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Barra Lateral -->
+            <aside class="col-lg-4 col-md-6">
+                <!-- Tarjeta de Recursos -->
+                <div class="card sidebar-card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Información secundaria</h5>
+                    </div>
+                    
+                    <!-- Imagen -->
+                    <img src="img/imagen2.jpg" 
+                         class="card-img-top sidebar-image"
+                         alt="Imagen secundaria"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/17a2b8/ffffff?text=Imagen+Secundaria'">
+                    
+                    <div class="card-body">
+                        <p class="card-text">
+                            Contenido adicional y recursos útiles para complementar la información principal del sitio web.
+                        </p>
+                        
+                        <h4 class="resources-title">Recursos destacados</h4>
+                        
+                        <div class="resources-list">
+                            <a href="#" class="resource-item">
+                                <span>Tutoriales HTML/CSS</span>
+                                <span class="badge">12</span>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <span>Documentación Bootstrap</span>
+                                <span class="badge">8</span>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <span>Ejemplos de código</span>
+                                <span class="badge">25</span>
+                            </a>
+                        </div>
+                        
+                        <div class="button-group">
+                            <a href="#" class="btn btn-primary">Acceder a recursos</a>
+                            <a href="#" class="btn btn-outline-secondary">Más información</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de Noticias -->
+                <div class="card sidebar-card">
+                    <div class="card-header news-header">
+                        <h5 class="card-title">Noticias recientes</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Mantente actualizado con las últimas novedades en desarrollo web.
+                        </p>
+                        
+                        <div class="alert alert-news">
+                            <strong>Nuevo:</strong> Tutorial de Bootstrap 5 disponible
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="#" class="btn btn-news">Suscribirse</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </main>
 
-    <footer>
-    <p>© 2026 Aplicaciones Web</p>
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-column">
+                    <h5>Mi sitio web</h5>
+                    <p>Desarrollado con las mejores prácticas de desarrollo web frontend.</p>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h5>Enlaces rápidos</h5>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h5>Contacto</h5>
+                    <p>Email: info@misitioweb.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>© 2026 Aplicaciones Web. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS (al final del body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
